@@ -1,4 +1,4 @@
-'use client'
+"use client"
 import React from 'react';
 import Image from 'next/image';
 import { TypeAnimation } from 'react-type-animation';
@@ -29,7 +29,7 @@ export default function Home() {
       speed={50}
       style={{  display: 'inline-block' }}
       repeat={Infinity}
-    />
+      />
       <p className="text-xl mb-4 animate-fade-in">Images using artificial intelligence</p>
       <div className="flex space-x-4">
         <Link href="/explore">
