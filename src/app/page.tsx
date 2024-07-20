@@ -24,7 +24,7 @@ export default function Home() {
         'Generate with us',
         1000,
       ]}
-       className="text-6xl font-bold mb-8 animate-pulse "
+       className="sm:text-6xl text-3xl font-bold mb-8 animate-pulse "
       wrapper="span"
       speed={50}
       style={{  display: 'inline-block' }}

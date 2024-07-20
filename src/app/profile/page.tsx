@@ -11,8 +11,11 @@ async function page() {
   }
 
   return (
-    <div>
-     <Logout/>
+    <div className='h-full  flex flex-col justify-center items-center'>
+      <h1>
+       You are logged in by  {session.user.email}
+      </h1>
+      <Logout/>
     </div>
   )
 }
