@@ -6,13 +6,12 @@ import { auth } from '@/app/auth'
 
 const images = ["/img1.png", "/img2.jpg", "/img3.jpg", "/img4.png"];
 
-export const generate = async (Prompt:string)=> {
+export const generate = async (Prompt:string, selected:any, erased:any)=> {
     const session = await auth();
     if(!session){
         return{ msg:"Not Signed In",image:null};
     }
     const user:any = await kv.get(session.user?.email!);
-    console.log(user);
     const currentTime = Date.now();
     const oneHour = 3600000;
     const recentImages = user.images.filter((img:any) => currentTime - img.time < oneHour);

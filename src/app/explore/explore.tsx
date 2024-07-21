@@ -134,7 +134,7 @@ export default function Explore() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-center w-full">
+        {images && <div className="flex flex-col items-center justify-center w-full">
           <h1 className="text-3xl font-bold mb-5">Explore Your Generated Images</h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full">
           {images ? (
@@ -144,7 +144,7 @@ export default function Explore() {
                 .map((img, index) => (
                   <BackgroundGradient key={index} className="rounded-[22px] p-4 bg-zinc-900">
                     <div className="flex flex-col justify-center items-center cursor-pointer">
-                      <Link href="/generate/new">
+                      <Link href={`/generate${img.image}`}>
                         <div>
                           <Image
                             src={img.image}
@@ -176,7 +176,8 @@ export default function Explore() {
               View More
             </button>
           )}
-        </div>
+        </div>}
+        {!images && <h1 className="text-3xl font-bold mb-5">Generate some images to get this explore feed </h1>}
       </div>
       </Vortex>
 
