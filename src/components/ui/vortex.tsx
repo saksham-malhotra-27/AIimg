@@ -16,6 +16,7 @@ interface VortexProps {
   baseRadius?: number;
   rangeRadius?: number;
   backgroundColor?: string;
+  sm?: boolean;
 }
 
 export const Vortex = (props: VortexProps) => {
@@ -37,6 +38,7 @@ export const Vortex = (props: VortexProps) => {
   const xOff = 0.00125;
   const yOff = 0.00125;
   const zOff = 0.0005;
+  const sm = props.sm || false;
   const backgroundColor = props.backgroundColor || "#000000";
   let tick = 0;
   const noise3D = createNoise3D();
@@ -238,12 +240,12 @@ export const Vortex = (props: VortexProps) => {
   }, []);
 
   return (
-    <div className={cn("relative h-full w-full ", props.containerClassName)}>
+    <div className={`${cn("relative h-full w-full ", props.containerClassName)}`} >
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         ref={containerRef}
-        className="absolute h-full w-full inset-0 z-0 bg-transparent flex items-center justify-center"
+        className={`absolute h-full ${sm?"hidden sm:flex":""}  w-full inset-0 z-0 bg-transparent flex items-center justify-center`}
       >
         <canvas ref={canvasRef}></canvas>
       </motion.div>

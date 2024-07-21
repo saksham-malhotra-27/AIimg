@@ -36,6 +36,16 @@ export const getImages = async ()=>{
     return {msg:"Image generated",images:user.images};
 }
 
+export async function getRandomSampleImages() {
+    return {
+      images: [
+        { image: '/race.jpg', type: 'Adrenaline booster' },
+        { image: '/second.jpg', type: 'Abstract' },
+        { image: '/art.jpg', type: 'Art' },
+        { image: '/white sketch.jpg', type: 'Neon Sketches' },
+      ]
+    };
+  }
 
 export const handleLogout = async ()=>{
 await signOut();

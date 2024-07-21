@@ -35,7 +35,7 @@ export default function Home() {
         <Link href="/explore">
           <button className="px-6 py-2 bg-pink-600 hover:bg-pink-700 rounded-xl text-lg font-semibold transition duration-300 transform hover:scale-105">Explore</button>
         </Link>
-        <Link href="/generate">
+        <Link href="/generate/new">
           <button className="px-6 py-2 bg-indigo-600 hover:bg-indigo-700 rounded-lg text-lg font-semibold transition duration-300 transform hover:scale-105">Generate</button>
         </Link>
         <Link href="/profile">

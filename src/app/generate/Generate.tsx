@@ -56,7 +56,7 @@ export default function Generate() {
           <div className="loader"></div>
         </div>
       )}
-      <div className="flex flex-col items-center p-5">
+      <div className="flex flex-col items-center p-5 ">
         <h1 className="text-3xl font-bold mb-5">
           <span className=''>I</span>
           <span className=''>M</span> 
@@ -97,7 +97,7 @@ export default function Generate() {
         </div>
       </div>
 
-      <BackgroundBeams />
+      <BackgroundBeams className=' -z-10'/>
 
     </div>
   );
