@@ -215,12 +215,14 @@ export default function Generate() {
               <button
                 className={`p-2 rounded-lg ${activeTool === 'select' ? 'bg-purple-500' : 'bg-indigo-600'}`}
                 onClick={() => setActiveTool(activeTool === 'select' ? null : 'select')}
+                disabled={!init?true:false}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4" />
                 </svg>
               </button>
               <button
+                disabled={!init?true:false}
                 className={`p-2 rounded-lg ${activeTool === 'erase' ? 'bg-purple-500' : 'bg-indigo-600'}`}
                 onClick={() => setActiveTool(activeTool === 'erase' ? null : 'erase')}
               >
@@ -234,6 +236,7 @@ export default function Generate() {
               <button
                 className="p-2 rounded-lg bg-red-600"
                 onClick={clearCanvas}
+                disabled={!init?true:false}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
@@ -248,7 +251,7 @@ export default function Generate() {
                 min="5"
                 max="50"
                 value={eraserSize}
-                disabled={activeTool === "select"}
+                disabled={!init?true:false || !(activeTool === "erase")}
                 onChange={(e) => setEraserSize(Number(e.target.value))}
                 className="w-full"
               />
