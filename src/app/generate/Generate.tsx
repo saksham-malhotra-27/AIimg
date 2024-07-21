@@ -224,9 +224,12 @@ export default function Generate() {
                 className={`p-2 rounded-lg ${activeTool === 'erase' ? 'bg-purple-500' : 'bg-indigo-600'}`}
                 onClick={() => setActiveTool(activeTool === 'erase' ? null : 'erase')}
               >
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-7 7-7-7" />
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="4" y="4" width="16" height="6" rx="1" fill="#C4C4C4" />
+                  <rect x="4" y="10" width="16" height="10" rx="1" fill="#E0E0E0" />
+                  <rect x="6" y="10" width="12" height="10" rx="1" fill="#F5F5F5" />
                 </svg>
+
               </button>
               <button
                 className="p-2 rounded-lg bg-red-600"
