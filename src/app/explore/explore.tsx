@@ -136,21 +136,23 @@ export default function Explore() {
 
         <div className="flex flex-col items-center justify-center w-full">
           <h1 className="text-3xl font-bold mb-5">Explore Your Generated Images</h1>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {images ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full">
+          {images ? (
               images
                 .sort((a, b) => b.time - a.time)
                 .slice(0, visibleImagesCount)
                 .map((img, index) => (
                   <BackgroundGradient key={index} className="rounded-[22px] p-4 bg-zinc-900">
-                    <div className="flex flex-col justify-center items-center rounded-lg">
-                      <Image
-                        src={img.image}
-                        alt={`Generated ${index}`}
-                        className="w-full h-48 object-cover rounded-lg"
-                      />
-                      <Link href={`/generate/${img.image}`}>
-                        <h1 className="block mt-2 text-center text-indigo-500 hover:text-indigo-700">Generate Similar</h1>
+                    <div className="flex flex-col justify-center items-center cursor-pointer">
+                      <Link href="/generate/new">
+                        <div>
+                          <Image
+                            src={img.image}
+                            alt={`Random Sample ${index}`}
+                            className="w-60 h-48 object-cover rounded-lg"
+                          />
+                          <h3 className="mt-2 text-center text-indigo-500 hover:text-indigo-700">Generate Similar</h3>
+                        </div>
                       </Link>
                     </div>
                   </BackgroundGradient>
@@ -158,11 +160,11 @@ export default function Explore() {
             ) : (
               Array.from({ length: 4 }).map((_, index) => (
                 <BackgroundGradient key={index} className="rounded-[22px] p-4 bg-zinc-900">
-                  <div className="flex flex-col justify-center items-center rounded-lg">
-                    <Skeleton height={192} width="100%" className="w-full" />
-                    <Skeleton height={20} width="100%" className="mt-2" />
-                  </div>
-                </BackgroundGradient>
+                <div className="flex flex-col justify-center items-center cursor-pointer">
+                  <Skeleton height={192} width="100%" className="w-full" />
+                  <Skeleton height={20} width="100%" className="mt-2" />
+                </div>
+              </BackgroundGradient>
               ))
             )}
           </div>
